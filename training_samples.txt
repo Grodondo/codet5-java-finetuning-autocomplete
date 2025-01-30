@@ -1,0 +1,151 @@
+
+Step 30000:
+Prompt:
+ public void init(OutputStream out, int bufSize)
+	{
+		if (com.ibm.ejs.ras.TraceComponent.isAnyTracingEnabled()&&logger.isLoggable (Level.FINE)) {  //306998.15
+			logger.logp(Level.FINE, CLASS_NAME,"init", "init", out);
+        }
+		// make sure that we don't have anything hanging around between
+		// init()s -- this is the fix for the broken pipe error being
+Generated Output:
+ 		// called in the future.
+		// this is the default case, so
+--------------------------------------------------
+
+Step 40000:
+Prompt:
+ public void marshall(AdminLinkProviderForUserRequest adminLinkProviderForUserRequest, ProtocolMarshaller protocolMarshaller) {
+
+        if (adminLinkProviderForUserRequest == null) {
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
+        }
+
+        try {
+            protocolMarshaller.marshall(adminLinkProviderForUserRequest.getUserPoolId(), USERPOOLID_BINDING);
+            protocolMarshaller.marshall(adminLinkProviderForUserRequest.getDestinationUser(), DESTINATIONUSER_BINDING);
+Generated Output:
+             protocolMarshaller.marshall(adminLinkProviderForUserRequest.getDestinationUser(), DESTINATIONUSER_
+--------------------------------------------------
+
+Step 50000:
+Prompt:
+ void writeSpan(Span span, int sizeOfSpan, Buffer result) {
+    result.writeByte(SPAN.key);
+    result.writeVarint(sizeOfSpan); // length prefix
+Generated Output:
+     result.write(span.length());
+  }
+--------------------------------------------------
+
+Step 60000:
+Prompt:
+ public void householderSymmetric( int row, double gamma )
+    {
+        int startU = row*N;
+
+        // compute v = -gamma*A*u
+        for( int i = row+1; i < N; i++ ) {
+            double totalReal = 0;
+            double totalImag = 0;
+
+            // the lower triangle is not written to so it needs to traverse upwards
+            // to get the information.  Reduces the number of matrix writes need
+            // improving large matrix performance
+            for( int j = row+1; j < i; j++ ) {
+                double realA = QT.data[(j*N+i)*2];
+                double imagA = -QT.data[(j*N+i)*2+1];
+
+                double realU = QT.data[(startU+j)*2];
+                double imagU = QT.data[(startU+j)*2+1];
+
+                totalReal += realA*realU - imagA*imagU;
+                totalImag += realA*imagU + imagA*realU
+Generated Output:
+ 
+            // compute the matrix
+            for( int j = row; j < N;
+--------------------------------------------------
+
+Step 70000:
+Prompt:
+ public static Application getApplicationFromClassPath(final String _application,
+                                                          final List<String> _classpath)
+        throws InstallationException
+    {
+Generated Output:
+         return getApplicationFromClassPath(_application, _classpath, null);
+    }
+--------------------------------------------------
+
+Step 80000:
+Prompt:
+ @Override
+    public BSONObject create(boolean array, List<String> pathParts) {
+        if (rootClass == null) {
+            return array? new BasicDBList() : new BasicDBObject();
+        }
+
+        if (pathParts == null) {
+            try {
+                return (DBObject) rootClass.newInstance();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        String path = buildPath(pathParts);
+        Class returnClass;
+
+        if ((returnClass = getClassFromCache(path)) == null) {
+            returnClass = deriveClass(path, pathParts.get(pathParts.size() - 1), array);
+        }
+
+        // At this point, we know what class to construct and the class cache is properly set
+
+        if (DBObject.class.isAssignableFrom(returnClass)) {
+            try {
+                return (DBObject) returnClass.newInstance();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        } else if (Map.class.isAssignableFrom(returnClass))
+Generated Output:
+             }
+        } else if (DBObject.class.isAssignableFrom(returnClass
+--------------------------------------------------
+
+Step 90000:
+Prompt:
+ private ResourceMethod computeMethod(ExecutableElement ee, List<ResourceArgument> arguments) {
+    final String javaDoc = processingEnv.getElementUtils().getDocComment(ee);
+    final Path pathAnnotation = ee.getAnnotation(Path.class);
+    final Produces producesAnnotation = ee.getAnnotation(Produces.class);
+    return new ResourceMethod(
+        ee.getSimpleName().toString(),
+        computeRequestMethod(ee),
+        (pathAnnotation == null)? null : pathAnnotation.value(),
+        (producesAnnotation == null)? null : Joiner.on(",").join(producesAnnotation.value()),
+Generated Output:
+         (javaDoc == null)? null : javaDoc.substring(1),
+        (
+--------------------------------------------------
+
+Step 100000:
+Prompt:
+ public static String termsStoreName(TableDefinition tableDef) {
+        String objStoreName = Utils.truncateTo(objectsStoreName(tableDef), MAX_CF_NAME_LENGTH - "_Terms".length());
+Generated Output:
+         return objStoreName;
+    }
+--------------------------------------------------
+
+Step 110000:
+Prompt:
+ public static Bitmap decodeStream(InputStream stream, boolean closeStream) {
+        return AsyncBitmapTexture.decodeStream(stream,
+                AsyncBitmapTexture.glMaxTextureSize,
+Generated Output:
+                 closeStream);
+    }
+--------------------------------------------------
