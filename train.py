@@ -4,6 +4,7 @@ import os
 import random
 import torch
 import gc
+import numpy as np
 from datasets import load_dataset
 from transformers import (
     AutoTokenizer,
@@ -40,6 +41,7 @@ class TrainingCallback(TrainerCallback):
                 self.dataset = train_dataloader.dataset
                 print(self.dataset.shape)
                 
+                # Verify all required components are available
                 if not all([self.model, self.tokenizer, self.dataset]):
                     print("⚠️ Missing components:", 
                           f"Model: {bool(self.model)}, Tokenizer: {bool(self.tokenizer)}, Dataset: {bool(self.dataset)}")
@@ -141,6 +143,28 @@ def tokenize_data(examples, tokenizer):
 def compute_metrics(eval_pred, tokenizer):
     """Calculate evaluation metrics"""
     predictions, labels = eval_pred
+    
+    # Debug: Check for invalid token IDs
+    print(labels[0])
+    print(predictions[0])
+    print("Predictions shape:", predictions.shape)
+    print("------------------------------------")
+    print("Predictions type", predictions.dtype)
+    print("Min prediction ID:", np.min(predictions))
+    print("Max prediction ID:", np.max(predictions))
+    print("Vocab size:", tokenizer.vocab_size)
+    
+    # Convert predictions to numpy array if needed
+    if isinstance(predictions, tuple):
+        predictions = predictions[0]
+    predictions = np.array(predictions)
+    
+    # 1. Handle negative token IDs
+    predictions = np.where(predictions < 0, tokenizer.pad_token_id, predictions)
+    # 2. Handle token IDs beyond vocabulary size
+    predictions = np.where(predictions >= tokenizer.vocab_size, tokenizer.pad_token_id, predictions)
+
+    
     # Untokenize the predictions/labels
     decoded_preds = tokenizer.batch_decode(predictions, skip_special_tokens=True)
     decoded_labels = tokenizer.batch_decode(labels, skip_special_tokens=True)
@@ -154,6 +178,9 @@ def main(args):
     
     # Initialize model and tokenizer
     model, tokenizer = load_model_and_tokenizer(args.model_name)
+    
+    print("Tokenizer vocab size:", tokenizer.vocab_size)
+    print("Model output dimensions:", model.config.vocab_size)
     
     # Load and preprocess dataset
     dataset = load_dataset(

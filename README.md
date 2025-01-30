@@ -59,6 +59,7 @@ python train.py --resume_from_checkpoint ./models/checkpoint-12000
 | `--epochs` | 5 | Number of training epochs |
 | `--no-fp16` | True | Deactivate the mixed precision training |
 | `--output_dir` | ./codet5-java | Output directory |
+| `--resume_from_checkpoint` | False | resume from checkpoint-nnnnn |
 
 ## Training Process
 
