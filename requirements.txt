@@ -1,4 +1,15 @@
-transformers==4.33.2
+# Core dependencies
 torch==2.0.1
+transformers==4.33.2
 datasets==2.14.5
 tokenizers==0.14.1
+
+# Additional dependencies
+numpy==1.24.3       # For numerical operations
+argparse==1.4.0     # For command-line argument parsing (usually included in Python)
+logging==0.5.1.2    # For logging (usually built-in)
+tqdm==4.65.0        # For progress bars
+scipy==1.10.1       # If any additional numerical processing is needed
+accelerate==0.21.0  # Helps optimize training on GPUs
+sentencepiece==0.1.99 # Required for some tokenizers
+protobuf==3.20.3    # Ensures compatibility with Hugging Face libraries

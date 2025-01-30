@@ -20,10 +20,26 @@ A project for fine-tuning Salesforce's CodeT5 model on Java code completion task
 1. **Clone Repository**
 ```bash
 git clone https://github.com/yourusername/codet5-java-finetuning.git
-cd codet5-java-finetuning
+cd codet5-java-finetuning-autocomplete
 ```
 
-2. **Install Dependencies**
+2. **Create Virtual Enviroment (Optional)**
+```bash
+python -m venv /path/to/new/virtual/environment
+```
+- To open the virtual enviroment execute the following command:
+```bash
+# On Windows (Command Prompt)
+.\path\to\new\virtual\environment\Scripts\activate
+
+# On Windows (PowerShell)
+.\path\to\new\virtual\environment\Scripts\Activate.ps1
+
+# On macOS & Linux (Bash/Zsh)
+source /path/to/new/virtual/environment/bin/activate
+```
+
+3. **Install Dependencies**
 ```bash
 pip install -r requirements.txt
 ```

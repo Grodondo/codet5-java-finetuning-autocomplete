@@ -149,3 +149,13 @@ Generated Output:
                  closeStream);
     }
 --------------------------------------------------
+
+Step 120000:
+Prompt:
+ private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
+        executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
+Generated Output:
+         return invoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
+--------------------------------------------------

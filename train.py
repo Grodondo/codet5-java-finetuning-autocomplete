@@ -169,6 +169,9 @@ def compute_metrics(eval_pred, tokenizer):
     decoded_preds = tokenizer.batch_decode(predictions, skip_special_tokens=True)
     decoded_labels = tokenizer.batch_decode(labels, skip_special_tokens=True)
     
+    print("Decoded predictions:", decoded_preds[0])
+    print("Decoded labels:", decoded_labels[0])
+    
     exact_matches = sum(1 for p, l in zip(decoded_preds, decoded_labels) if p == l)
     return {"exact_match": exact_matches / len(decoded_labels)}
 
