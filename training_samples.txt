@@ -159,3 +159,72 @@ Prompt:
 Generated Output:
          return invoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
 --------------------------------------------------
+
+Step 130000:
+Prompt:
+ @Override
+  protected void flushAndSync(boolean durable) throws IOException {
+    if (outputStream == null) {
+      throw new IOException("Trying to use aborted output stream!");
+    }
+    if (doubleBuf.isFlushed()) {
+      return;
+    }
+Generated Output:
+     if (outputStream.isFlushed()) {
+      outputStream.flush();
+
+--------------------------------------------------
+
+Step 140000:
+Prompt:
+ public static Drawable getSelectableBackground(Context ctx) {
+        int selectableBackgroundRes = getSelectableBackgroundRes(ctx);
+Generated Output:
+         return selectableBackground(selectableBackgroundRes);
+    }
+--------------------------------------------------
+
+Step 150000:
+Prompt:
+ public void rollback() {
+        log.debug("Performing rollback");
+        while (!operationExecutors.isEmpty()) {
+            CompensatingTransactionOperationExecutor rollbackOperation = operationExecutors.pop();
+            try {
+                rollbackOperation.rollback();
+            } catch (Exception e) {
+                throw new TransactionSystemException(
+Generated Output:
+                     "Error while executing rollback operation", e);
+            }
+        }
+    }
+--------------------------------------------------
+
+Step 160000:
+Prompt:
+ public static void retry(Predicate<Integer> action, String label, int times, long delay) throws TooManyRetriesException {
+        if (times < 1) {
+            throw new IllegalArgumentException("Retry block must try at least 1 time");
+        }
+
+        if (delay < 1) {
+            throw new IllegalArgumentException("Must have at least 1 ms delay");
+        }
+
+        label = label == null? "retry block" : label;
+
+        int tries = 0;
+
+        for (; times > tries; ++tries) {
+            try {
+                if (action.test(tries)) return;
+            } catch (Exception e) {
+                LOGGER.warn("Attempted to perform {}, but got exception", label, e);
+            }
+
+Generated Output:
+             if (times > 0) {
+                LOGGER.warn("Retry block must have at
+--------------------------------------------------

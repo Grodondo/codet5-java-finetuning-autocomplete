@@ -2,11 +2,11 @@
 
 A project for fine-tuning Salesforce's CodeT5 model on Java code completion tasks using the CodeSearchNet dataset.
 
-![CodeT5 Architecture](https://github.com/salesforce/CodeT5/raw/main/CodeT5.png)*Example code structure (image from original CodeT5 repo)*
+![CodeT5 Architecture](https://github.com/salesforce/CodeT5/codet5.gif)*Example code structure (image from original CodeT5 repo)*
 
 ## Features
 
-- **Code Completion Fine-Tuning**: Adapt CodeT5 for Java code completion tasks
+- **Code Completion Fine-Tuning**: Adapted CodeT5 for Java code completion tasks
 - **Checkpoint Management**: Automatic saving and resumption capabilities
 - **Custom Training Callbacks**:
   - Memory management
@@ -19,8 +19,8 @@ A project for fine-tuning Salesforce's CodeT5 model on Java code completion task
 
 1. **Clone Repository**
 ```bash
-git clone https://github.com/yourusername/codet5-java-finetuning.git
-cd codet5-java-finetuning-autocomplete
+git clone https://github.com/grodondo/codet5-java-finetuning.git
+cd codet5-java-finetuning-autocomplete-ai
 ```
 
 2. **Create Virtual Enviroment (Optional)**
