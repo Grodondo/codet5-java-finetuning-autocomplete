@@ -1,0 +1,15 @@
+public void connect() {
+		Scanner sc = new Scanner(System.in);
+		DatagramSocket socket = null;
+
+		try {
+			socket = new DatagramSocket();
+			InetAddress serverAddress = InetAddress.getByName(this.ip);
+			
+			String mensaje = "";
+			do {
+				System.out.println("Escribe el mensaje a enviar");
+				mensaje = sc.nextLine();
+
+				byte[] buffer = mensaje.getBytes();
+				DatagramPacket paqueteEnviado = new DatagramPacket(buffer

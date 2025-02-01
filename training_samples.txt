@@ -228,3 +228,511 @@ Generated Output:
              if (times > 0) {
                 LOGGER.warn("Retry block must have at
 --------------------------------------------------
+
+Step 170000:
+Prompt:
+ public ResourcePoolsBuilder withReplacing(ResourcePool resourcePool) {
+    Map<ResourceType<?>, ResourcePool> newPools = new HashMap<>(resourcePools);
+    newPools.put(resourcePool.getType(), resourcePool);
+Generated Output:
+     return new ResourcePoolsBuilder(newPools);
+  }
+--------------------------------------------------
+
+Step 180000:
+Prompt:
+ @Override
+    public RejectCertificateTransferResult rejectCertificateTransfer(RejectCertificateTransferRequest request) {
+        request = beforeClientExecution(request);
+Generated Output:
+         return executeRejectCertificateTransfer(request);
+    }
+--------------------------------------------------
+
+Step 190000:
+Prompt:
+ public static void setLearningRate(MultiLayerNetwork net, int layerNumber, ISchedule lrSchedule) {
+        setLearningRate(net, layerNumber, Double.NaN, lrSchedule, true);
+Generated Output:
+     }
+--------------------------------------------------
+
+Step 200000:
+Prompt:
+ public Access authorize(final AuthenticationResult authenticationResult)
+  {
+    transition(State.INITIALIZED, State.AUTHORIZING);
+    return doAuthorize(
+        authenticationResult,
+        AuthorizationUtils.authorizeAllResourceActions(
+            authenticationResult,
+            Iterables.transform(
+                baseQuery.getDataSource().getNames(),
+                AuthorizationUtils.DATASOURCE_READ_RA_GENERATOR
+Generated Output:
+             )
+        )
+    );
+  }
+--------------------------------------------------
+
+Step 210000:
+Prompt:
+ @SuppressWarnings("unchecked")
+	@Override
+	public EList<IfcMaterialProfile> getMaterialProfiles() {
+Generated Output:
+ 		return (EList<IfcMaterialProfile>) eGet(Ifc4Package.Literals
+--------------------------------------------------
+
+Step 220000:
+Prompt:
+ public void focusLost(FocusEvent _focusEvent) {
+        short nFocusFlags = _focusEvent.FocusFlags;
+        int nFocusChangeReason = nFocusFlags & FocusChangeReason.TAB;
+        if (nFocusChangeReason == FocusChangeReason.TAB) {
+            // get the window of the Window that has gained the Focus...
+            // Note that the xWindow is just a representation of the controlwindow
+            // but not of the control itself
+Generated Output:
+             // Note that the xWindow is not a valid window, so we'll just get the
+--------------------------------------------------
+
+Step 230000:
+Prompt:
+ public static void logComponent(final String type, final String details) {
+
+    TransactionLogger instance = getInstance();
+Generated Output:
+     instance.logComponent(type, details);
+  }
+--------------------------------------------------
+
+Step 240000:
+Prompt:
+ private int processSet(String regex, int i, StringBuilder result, UnicodeSet temp, ParsePosition pos) {
+        try {
+            pos.setIndex(i);
+            UnicodeSet x = temp.clear().applyPattern(regex, pos, symbolTable, 0);
+            x.complement().complement(); // hack to fix toPattern
+            result.append(x.toPattern(false));
+            i = pos.getIndex() - 1; // allow for the loop increment
+            return i;
+Generated Output:
+         } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+--------------------------------------------------
+
+Step 250000:
+Prompt:
+ public Model enrichModel(Model model) {
+        final List<BeanModel> dBeans = new ArrayList<>();
+        final List<EnumModel> dEnums = new ArrayList<>();
+        for (BeanModel bean : model.getBeans()) {
+            final BeanModel dBean = enrichBean(bean);
+            dBeans.add(dBean);
+        }
+        for (EnumModel enumModel : model.getEnums()) {
+            final EnumModel dEnumModel = enrichEnum(enumModel);
+Generated Output:
+             dEnums.add(dEnumModel);
+        }
+        return new Model
+--------------------------------------------------
+
+Step 260000:
+Prompt:
+ protected static void buildSignatureValidationFilterIfNeeded(final SamlRegisteredService service,
+                                                                 final List<MetadataFilter> metadataFilterList,
+                                                                 final Resource metadataSignatureResource) throws Exception {
+        val signatureValidationFilter = SamlUtils.buildSignatureValidationFilter(metadataSignatureResource);
+Generated Output:
+         LOGGER.debug("Signature validation filter {} is [{}]", signatureValidationFilter, metadataFilterList
+--------------------------------------------------
+
+Step 270000:
+Prompt:
+ public static CommerceCurrency fetchByUUID_G(String uuid, long groupId,
+		boolean retrieveFromCache) {
+Generated Output:
+ 		return getPersistence().fetchByUUID_G(uuid, groupId, retrieveFromCache);
+
+--------------------------------------------------
+
+Step 280000:
+Prompt:
+ @Override
+	public Object getObject(final int columnIndex) throws SQLException {
+		String columnLabel = getWrapped().getMetaData().getColumnLabel(columnIndex);
+
+Generated Output:
+ 		return getObject(columnLabel);
+	}
+--------------------------------------------------
+
+Step 290000:
+Prompt:
+ public void addField(String fieldGroup, final I_CmsFormField formField) {
+
+        initializeFormFieldWidget(formField);
+        m_fields.put(formField.getId(), formField);
+        String modelId = formField.getModelId();
+        m_fieldsByModelId.put(modelId, formField);
+        formField.getLayoutData().put("group", fieldGroup);
+Generated Output:
+         m_fieldsByModelId.put(modelId, formField);
+        m
+--------------------------------------------------
+
+Step 300000:
+Prompt:
+ public final void compress(ByteBuffer src, ByteBuffer dest) {
+    final int cpLen = compress(src, src.position(), src.remaining(), dest, dest.position(), dest.remaining());
+    src.position(src.limit());
+Generated Output:
+     dest.position(dest.position() + cpLen);
+  }
+--------------------------------------------------
+
+Step 310000:
+Prompt:
+ public static DoubleMatrix logi(DoubleMatrix x) {
+		/*# mapfct('Math.log') #*/
+//RJPP-BEGIN------------------------------------------------------------
+	   for (int i = 0; i < x.length; i++)
+	      x.put(i, (double) Math.log(x.get(i)));
+Generated Output:
+ //RJPP-END------------------------------------------------------------
+		return x;
+	}
+--------------------------------------------------
+
+Step 320000:
+Prompt:
+ @Nullable
+  public Point center() {
+    // Store locally since rawCenter() is mutable
+    double[] center = rawCenter();
+    if (center!= null && center.length == 2) {
+      return Point.fromLngLat(center[0], center[1]);
+Generated Output:
+     }
+    return null;
+  }
+--------------------------------------------------
+
+Step 330000:
+Prompt:
+ @Override
+    public BatchDetectDominantLanguageResult batchDetectDominantLanguage(BatchDetectDominantLanguageRequest request) {
+        request = beforeClientExecution(request);
+Generated Output:
+         return executeBatchDetectDominantLanguage(request);
+    }
+--------------------------------------------------
+
+Step 340000:
+Prompt:
+ public int getIndex(String tokenForm) {
+		// tokenForm = tokenForm.replaceAll("\\W+", "_");
+		int[] index = (int[]) tokenForm2index.get(tokenForm);
+		if (index == null)
+Generated Output:
+ 			index = new int[0];
+		return index[0];
+	
+--------------------------------------------------
+
+Step 350000:
+Prompt:
+ public ModifierAdjustment withFieldModifiers(ElementMatcher<? super FieldDescription.InDefinedShape> matcher,
+                                                 List<? extends ModifierContributor.ForField> modifierContributors) {
+        return new ModifierAdjustment(typeAdjustments, CompoundList.of(new Adjustment<FieldDescription.InDefinedShape>(matcher,
+Generated Output:
+                                         new ModifierContributorModifierContributor(modifierContributors))));
+    }
+--------------------------------------------------
+
+Step 360000:
+Prompt:
+ public byte[] fastpath(int fnId, FastpathArg[] args) throws SQLException {
+    // Turn fastpath array into a parameter list.
+    ParameterList params = executor.createFastpathParameters(args.length);
+    for (int i = 0; i < args.length; ++i) {
+      args[i].populateParameter(params, i + 1);
+    }
+
+Generated Output:
+     // Convert the array to byte array.
+    return (byte[]) executor.execute
+--------------------------------------------------
+
+Step 370000:
+Prompt:
+ protected final PrcBankStatementSave<RS> lazyGetPrcBankStatementSave(
+    final Map<String, Object> pAddParam) throws Exception {
+    @SuppressWarnings("unchecked")
+    PrcBankStatementSave<RS> proc = (PrcBankStatementSave<RS>)
+      this.processorsMap.get(PrcBankStatementSave.class.getSimpleName());
+    if (proc == null) {
+      proc = new PrcBankStatementSave<RS>();
+      proc.setSrvOrm(getSrvOrm());
+      proc.setCsvReader(getCsvReader());
+Generated Output:
+       this.processorsMap.put(PrcBankStatementSave.class.getSimpleName(),
+--------------------------------------------------
+
+Step 380000:
+Prompt:
+ public static TextComponent make(final @NonNull Consumer<Builder> consumer) {
+    final Builder builder = builder();
+    consumer.accept(builder);
+Generated Output:
+     return new TextComponent(builder.build());
+  }
+--------------------------------------------------
+
+Step 390000:
+Prompt:
+ public Statistics columnDistinctCount(String columnName, Long ndv) {
+		this.columnStats
+			.computeIfAbsent(columnName, column -> new HashMap<>())
+			.put(DISTINCT_COUNT, String.valueOf(ndv));
+Generated Output:
+ 		return this;
+	}
+--------------------------------------------------
+
+Step 400000:
+Prompt:
+ public void loadSystemProperties(String configurationKey) {
+        String propertyRef = getProperty(configurationKey);
+        if (propertyRef == null) {
+            return;
+        }
+
+        if (propertyRef.startsWith("env:")) {
+            propertyRef = propertyRef.substring(4);
+            propertyRef = System.getenv(propertyRef);
+        }
+
+        if (!propertyRef.startsWith("/")) {
+            propertyRef = "/" + propertyRef;
+        }
+        try {
+            URL url = getClass().getResource(propertyRef);
+            if (url == null) {
+                url = new URL(propertyRef);
+Generated Output:
+             }
+            loadSystemProperties(url);
+        } catch (MalformedURLException e)
+--------------------------------------------------
+
+Step 410000:
+Prompt:
+ public void setPadding(float padding) {
+		if (Float.isNaN(padding_right)) {
+			setPadding_right(padding);
+		}
+		if (Float.isNaN(padding_left)) {
+			setPadding_left(padding);
+		}
+		if (Float.isNaN(padding_top)) {
+			setPadding_top(padding);
+Generated Output:
+ 		}
+		if (padding_bottom != null) {
+			set
+--------------------------------------------------
+
+Step 420000:
+Prompt:
+ public static PropertyFile readOnlyUnion(final File... filenames) throws IOException
+	{
+		final PropertyFile props = new PropertyFile();
+
+		for (final File f : filenames)
+		{
+			if (f!= null && f.exists())
+			{
+				props.merge(new PropertyFile(f));
+			}
+		}
+Generated Output:
+ 
+		if (props != null)
+			return props;
+
+		
+--------------------------------------------------
+
+Step 430000:
+Prompt:
+ public static Integer getDurationUnits(RecurringTask recurrence)
+   {
+      Duration duration = recurrence.getDuration();
+      Integer result = null;
+
+      if (duration!= null)
+      {
+         result = UNITS_MAP.get(duration.getUnits());
+Generated Output:
+       }
+
+      return result;
+   }
+--------------------------------------------------
+
+Step 440000:
+Prompt:
+ public StartExportTaskRequest withExportDataFormat(String... exportDataFormat) {
+        if (this.exportDataFormat == null) {
+            setExportDataFormat(new java.util.ArrayList<String>(exportDataFormat.length));
+        }
+        for (String ele : exportDataFormat) {
+            this.exportDataFormat.add(ele);
+Generated Output:
+         }
+        return this;
+    }
+--------------------------------------------------
+
+Step 450000:
+Prompt:
+ public Predicate newPredicate(String id, Span<Term> span) {
+	    idManager.updateCounter(AnnotationType.PREDICATE, id);
+	Predicate newPredicate = new Predicate(id, span);
+	annotationContainer.add(newPredicate, Layer.SRL, AnnotationType.PREDICATE);
+Generated Output:
+ 	return newPredicate;
+    }
+--------------------------------------------------
+
+Step 460000:
+Prompt:
+ public void processRecordInternally(Record record) {
+        if (record instanceof FormatRecord) {
+            FormatRecord fr = (FormatRecord) record;
+            _customFormatRecords.put(Integer.valueOf(fr.getIndexCode()), fr);
+        }
+        if (record instanceof ExtendedFormatRecord) {
+            ExtendedFormatRecord xr = (ExtendedFormatRecord) record;
+Generated Output:
+             _customFormatRecords.put(Integer.valueOf( xr.getIndexCode()
+--------------------------------------------------
+
+Step 470000:
+Prompt:
+ @Override
+    public final void visit(final HeadDocument document) {
+        setBaseObject(new ApiHead(document.getType(), document.getString()));
+Generated Output:
+         setBaseObject(document.getObject());
+    }
+--------------------------------------------------
+
+Step 480000:
+Prompt:
+ public JSONObject addActivity(String company, String team, HashMap<String, String> params) throws JSONException {
+        return oClient.post("/otask/v1/tasks/companies/" + company + "/teams/" + team + "/tasks", params);
+Generated Output:
+     }
+--------------------------------------------------
+
+Step 490000:
+Prompt:
+ public boolean fbml_refreshImgSrc(URL imageUrl)
+    throws FacebookException, IOException {
+    return extractBoolean(this.callMethod(FacebookMethod.FBML_REFRESH_IMG_SRC,
+                                          new Pair<String, CharSequence>("url",
+Generated Output:
+                                                        imageUrl.toString()));
+  }
+--------------------------------------------------
+
+Step 500000:
+Prompt:
+ public static Date parseDate(String value, ParsePosition pos) {
+        Long timestamp = parseTimestamp(value);
+        if (timestamp!= null) {
+            return new Date(timestamp);
+        }
+        if (value.contains(" ")) {
+            value = value.replace(" ", "+");
+        }
+        if (!(value.contains("-") || value.contains("+")) &&!value.endsWith("Z")) {
+            value += SYS_TZ;
+        }
+Generated Output:
+         if (pos.getType() == ParsePosition.DATE) {
+            return parse
+--------------------------------------------------
+
+Step 510000:
+Prompt:
+ public boolean containsValue (int value) {
+		K[] keyTable = this.keyTable;
+		int[] valueTable = this.valueTable;
+		for (int i = capacity + stashSize; i-- > 0;)
+Generated Output:
+ 			if (keyTable[i] == value) return false;
+		
+--------------------------------------------------
+
+Step 520000:
+Prompt:
+ public EClass getIfcStructuralLoad() {
+		if (ifcStructuralLoadEClass == null) {
+			ifcStructuralLoadEClass = (EClass) EPackage.Registry.INSTANCE.getEPackage(Ifc2x3tc1Package.eNS_URI)
+					.getEClassifiers().get(545);
+Generated Output:
+ 		}
+		return ifcStructuralLoadEClass;
+	}
+--------------------------------------------------
+
+Step 530000:
+Prompt:
+ public static void LTE(long parameter, long value, String name) throws IllegalArgumentException {
+		if (parameter > value) {
+			throw new IllegalArgumentException(String.format("%s is not less than or equal %d.", name, value));
+Generated Output:
+ 		}
+	}
+--------------------------------------------------
+
+Step 540000:
+Prompt:
+ public alluxio.grpc.FileSystemMasterCommonPOptionsOrBuilder getCommonOptionsOrBuilder() {
+    return commonOptions_ == null? alluxio.grpc.FileSystemMasterCommonPOptions.getDefaultInstance() : commonOptions_;
+Generated Output:
+   }
+--------------------------------------------------
+
+Step 550000:
+Prompt:
+ @NotNull
+    public static <TYPE> Set<ConstraintViolation<TYPE>> validate(@NotNull final Validator validator, @Nullable final TYPE value,
+            @Nullable final Class<?>... groups) {
+        if (value == null) {
+            return new HashSet<ConstraintViolation<TYPE>>();
+Generated Output:
+         }
+        return validate(validator, value, groups, false);
+    }
+--------------------------------------------------
+
+Step 560000:
+Prompt:
+ public void setGhost(boolean ghost) {
+        checkRpmFileSetAttributesAllowed();
+        if(ghost) {
+            directive.set(Directive.RPMFILE_GHOST);
+        } else {
+Generated Output:
+             directive.set(Directive.RPMFILE_GHOST);
+        }
+   
+--------------------------------------------------

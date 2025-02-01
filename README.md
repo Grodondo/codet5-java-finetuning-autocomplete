@@ -2,7 +2,10 @@
 
 A project for fine-tuning Salesforce's CodeT5 model on Java code completion tasks using the CodeSearchNet dataset.
 
-![CodeT5 Architecture](https://github.com/salesforce/CodeT5/codet5.gif)*Example code structure (image from original CodeT5 repo)*
+![CodeT5 Architecture](https://github.com/salesforce/CodeT5/blob/main/CodeT5%2B/codet5p_overview.png)*Example code structure (image from original CodeT5 repo)*
+
+CodeT5+ paper and model.
+[paper](https://arxiv.org/pdf/2305.07922.pdf) | [code](https://github.com/salesforce/CodeT5/tree/main/CodeT5+) | [model](https://huggingface.co/models?sort=downloads&search=codet5p)
 
 ## Features
 
